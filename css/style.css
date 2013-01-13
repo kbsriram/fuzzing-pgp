@@ -1,0 +1,320 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* baseline typography. 1em = 16px */
+/* line-height is set at 22px = 1.375em */
+/* elements are set to multiples of 22px (1.375em) */
+
+body {
+    line-height: 1.375em;
+    background-color: #fff;
+    color: #333;
+    font-family: Georgia, Times, serif;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2.75em;
+    margin-bottom: 2.75em;
+}
+
+body {
+/*
+    background-image: url(grid22.png);
+    background-repeat: repeat;
+    background-position: 0px -5px;
+*/
+}
+
+p {
+    margin-bottom: 1.375em;
+    text-renderig: optimizeLegibility;
+}
+strong {
+    font-weight: bold;
+}
+
+em,i {
+    font-style: italic;
+}
+
+ul,ol {
+    margin-bottom: 1.375em;
+}
+
+ol li {
+    list-style: decimal;
+    list-style-position: outside;
+    margin-left: 1.5em;
+}
+
+ul li {
+    list-style: circle;
+    list-style-position: outside;
+    margin-left: 1.5em;
+}
+
+pre,tt {
+    font-family: courier,monospace;
+    font-size: 0.875em;
+}
+pre {
+    margin-bottom: 1.571428em;
+}
+
+a {
+    text-decoration: none;
+    color: #36c;
+}
+
+a:hover {
+    text-decoration:underline;
+}
+
+h1, h2, h3, h4, h5 { 
+    font-family: 'Lucida Grande',Verdana,sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #000;
+}
+
+h1 {
+    margin-bottom: 2.75em;
+    margin-left: -8%;
+    color: #e33;
+}
+
+h2 {
+    margin-top: 4.125em;
+    margin-bottom: 1.375em;
+    margin-left: -8%;
+    color: #e33;
+}
+
+
+h3 {
+    /*margin-bottom: 1.375em;*/
+}
+
+h4 {
+    font-family: Georgia, Times, serif;
+}
+
+small {
+    font-size: 0.8em;
+}
+
+img.half {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+div.clear {
+    clear: both;
+    height: 0px;
+}
+
+.pkblock,.overlay {
+    width: 20.5em;
+    position: relative;
+    height: 16.5em;
+}
+.pkblock>div {
+    position:absolute;
+    width:0.45em;
+    height:0.45em;
+    border-right:1px solid #d8d8d8;
+    border-bottom:1px solid #d8d8d8;
+}
+
+.overlay_a {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.overlay_b {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s linear;
+    -moz-transition: opacity 0.2s linear;
+    -o-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;
+}
+
+.overlay_b:hover {
+    opacity: 1;
+}
+
+.c0 {left: 0em;}
+.c1 {left: 0.5em;}
+.c2 {left: 1em;}
+.c3 {left: 1.5em;}
+.c4 {left: 2em;}
+.c5 {left: 2.5em;}
+.c6 {left: 3em;}
+.c7 {left: 3.5em;}
+.c8 {left: 4em;}
+.c9 {left: 4.5em;}
+.c10 {left: 5em;}
+.c11 {left: 5.5em;}
+.c12 {left: 6em;}
+.c13 {left: 6.5em;}
+.c14 {left: 7em;}
+.c15 {left: 7.5em;}
+.c16 {left: 8em;}
+.c17 {left: 8.5em;}
+.c18 {left: 9em;}
+.c19 {left: 9.5em;}
+.c20 {left: 10em;}
+.c21 {left: 10.5em;}
+.c22 {left: 11em;}
+.c23 {left: 11.5em;}
+.c24 {left: 12em;}
+.c25 {left: 12.5em;}
+.c26 {left: 13em;}
+.c27 {left: 13.5em;}
+.c28 {left: 14em;}
+.c29 {left: 14.5em;}
+.c30 {left: 15em;}
+.c31 {left: 15.5em;}
+.c32 {left: 16em;}
+.c33 {left: 16.5em;}
+.c34 {left: 17em;}
+.c35 {left: 17.5em;}
+.c36 {left: 18em;}
+.c37 {left: 18.5em;}
+.c38 {left: 19em;}
+.c39 {left: 19.5em;}
+.r0 {top: 0em;}
+.r1 {top: 0.5em;}
+.r2 {top: 1em;}
+.r3 {top: 1.5em;}
+.r4 {top: 2em;}
+.r5 {top: 2.5em;}
+.r6 {top: 3em;}
+.r7 {top: 3.5em;}
+.r8 {top: 4em;}
+.r9 {top: 4.5em;}
+.r10 {top: 5em;}
+.r11 {top: 5.5em;}
+.r12 {top: 6em;}
+.r13 {top: 6.5em;}
+.r14 {top: 7em;}
+.r15 {top: 7.5em;}
+.r16 {top: 8em;}
+.r17 {top: 8.5em;}
+.r18 {top: 9em;}
+.r19 {top: 9.5em;}
+.r20 {top: 10em;}
+.r21 {top: 10.5em;}
+.r22 {top: 11em;}
+.r23 {top: 11.5em;}
+.r24 {top: 12em;}
+.r25 {top: 12.5em;}
+.r26 {top: 13em;}
+.r27 {top: 13.5em;}
+.r28 {top: 14em;}
+.r29 {top: 14.5em;}
+.r30 {top: 15em;}
+.r31 {top: 15.5em;}
+.r32 {top: 16em;}
+.r33 {top: 16.5em;}
+.r34 {top: 17em;}
+.r35 {top: 17.5em;}
+.r36 {top: 18em;}
+.r37 {top: 18.5em;}
+.r38 {top: 19em;}
+.r39 {top: 19.5em;}
+.hm0 { background: /*#fef0d9;*/#fff8f8; }
+.hm1 { background: #fdcc8a; }
+.hm2 { background: #fc8d59; }
+.hm8 { background: #d7301f; }
+
+.pktags>div { background: #fff8f8; }
+.pktags>div.tg { background: #253494; }
+.pktags>div.len { background: #2c7fb8; }
+.pkpk>div.pkh { background: #41b6c4; }
+.pkpk>div.mpl,.pksig>div.smpl { background: #7fcdbb; }
+.pkpk>div.mpi,.pksig>div.smpi { background: #c7e9b4; }
+.pksig>div.shr { background: #9e9ac8; }
+.pksig>div.spl { background: #756bb1; }
+.pksig>div.hs { background: #54278f; }
+.pksig>div.uhs { background: #bcbddc; }
+.pksig>div.sig { background: #dadaeb; }
+.pkuid>div.uid {
+    background:#ffffcc;
+}
+.pkuid>div.uid>span {
+    font-family: Courier;
+    font-size: 0.5em;
+    position:absolute;
+    bottom: -0.9em;
+    margin: 0px;
+    padding: 0px;
+}
+
+@media screen and (min-width: 52.5em) {
+    body {
+        width: 42em;
+    }
+    img.half {
+        width: 20.5em;
+        margin-right: 1em;
+        margin-bottom: 1em;
+        float: left;
+        clear: left;
+    }
+    .pkblock,.overlay {
+        margin-right: 1em;
+        float: left;
+        clear: left;
+    }
+}
