@@ -1,0 +1,8 @@
+<div class="overlay">
+  <div class="overlay_a">
+    <img src="media/all.png"/>
+  </div>
+  <div class="overlay_b">
+    <img src="media/heatmap.png"/>
+  </div>
+</div>
