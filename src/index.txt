@@ -15,37 +15,38 @@ you've made a mistake. At that point you're hung out to dry along your
 bug for everyone to poke at and feel smug about. So no programmer
 should cast stones here, for let he who is without sin, etc.
 
-I'm just a satisfied user of ('gpg') and I don't know the GnuPG
-maintainers. But I do know they've been at this thankless job for a
-decade and a half while fixing bugs efficiently and openly. Being
-GNU/libre software, what keeps them going is a genuine desire to
+I'm just a satisfied user of ('gpg'), and I'd like to put in a plug
+for the GnuPG maintainers. They've been at this thankless job for a
+decade and a half, while fixing bugs efficiently and openly. Being
+GNU/libre software, what keeps them going is mainly a desire to
 contribute to the community. So please say thank you by (> giving
 something back | http://g10code.com/gnupg-donation.html <) to them if
 you find ('gpg') useful.
 
 #Fuzzing inputs
 
-You can prove some security results in crypto mathematics, but sadly
+While you can prove some security results in crypto mathematics,
 there's no equivalent for crypto (_programming_). The only practical
-way to know anything at all about the security of your code is to test
-it in as many different ways as you can cook up.
+way to know anything about the security of your code is to test it in
+as many different ways as you can cook up.
 
-A simple and surprisingly productive technique is (>fuzz testing |
+A surprisingly productive technique is (>fuzz testing |
 https://en.wikipedia.org/wiki/Fuzz_testing<), where you throw lots of
-random inputs at every part of your program that reads data. I'll
-focus on a specific variation called mutation fuzzing, where you start
-with a good input and then change parts of it randomly. This technique
-can be automated easily as it needs little or no knowledge about the
-data itself. About the only thing you need to do is to ensure your
-code can conveniently read data via a script.
+random inputs at every part of your program that reads data.
+
+I'll focus on a specific variation called mutation fuzzing, where you
+start with a good input and then change parts of it randomly. This
+idea can be automated easily as it needs little or no knowledge about
+the data itself. The only thing you need to do is to ensure your code
+can conveniently accept data from a script.
 
 I was writing some java code that saved and read OpenPGP public
 keys. So I began by using a good public key, then randomly changed one
 byte at a time and read it back into the app to see what it did.
 
 I won't trouble you with the many ways I was chastened by this
-experiment! But I happened to use ('gpg 1.4.11') as a control application,
-and started to see some odd behavior.
+experiment! But I also used ('gpg 1.4.11') as a control application to
+read the same inputs, and started to see it do some odd things.
 
 ([media/heatmap.png])
 
@@ -58,11 +59,11 @@ That is, I repeatedly change just the first byte in the key and see if
 square nearly white. Otherwise I color it redder, depending on how
 often ('gpg') imports it. Then I change just the second byte, and so on.
 
-The first surprise of course is that you can see ('gpg') generally imports
-the key even if you change any of the bytes in the second half of the
-key. You might expect that ('gpg') should never import a key if anything
-was changed in it, but the truth is a bit more complex and you'll soon
-see why.
+The first surprise is that you see ('gpg') generally imports the key
+even if you change any of the bytes in the second half of the key. You
+might think that ('gpg') should never import a key if anything was
+changed in it, but the truth is a bit more complex and you'll soon see
+why.
 
 You also see a few red squares in the first half, and some not-so-red
 squares in the second half. So ('gpg') occasionally accepts keys modified
@@ -281,26 +282,32 @@ itself, and takes very little effort to do.
 
 #Conclusions
 
-What did I learn from this, as well as the bugs I found in my own
-app? In the math behind cryptography, you can prove certain bounds
-that help you understand its "goodness". But in practical
-cryptographic code, there's no way to really know how secure it is,
-even if you stare at the code.
+What did I learn from all this, including the bugs I found in my own
+app?
 
-Testing becomes a necessary (but not sufficient) way to understand the
-security of the system. A surprisingly effective test is to blindly
-and randomly bash at all the inputs to your application.  In fact,
-variations of this method are (> widely used in hardware
+In the math behind cryptography, you can prove certain bounds that
+help you understand its "goodness". But in practical cryptographic
+code, there's isn't a way to know how secure it really is without
+testing it. So testing is a necessary (though not sufficient) way to
+understand the security of the system.
+
+A surprisingly effective test is to blindly and randomly bash at all
+the inputs to your application.  In fact, variations of this method
+are (> widely used in hardware
 design|https://en.wikipedia.org/wiki/Automatic_test_pattern_generation<);
 and I've been been guilty of not paying enough attention to it.
 
-Lastly, complex data formats and protocols greatly increase the
-chances of security bugs in any implementation, and it's not a linear
-increase. Code to handle increasing complexity quickly hits the
-threshold where you cannot simply intellectually analyze it for
-security holes. It also gets worse if parts of the code are
-implemented by different people. When you're designing a new
-security-related format or protocol, it's just as important to keep it
-simple to make the implementations more secure.
+Also, complex data formats and protocols greatly increase the chances
+of security bugs in any implementation, and it's not a linear
+increase with complexity.
+
+Code to handle increasing complexity quickly hits a threshold where
+you cannot simply intellectually analyze it for security holes. It
+also gets worse if parts of the code are implemented by different
+people.
+
+So if you're designing a new security-related format or protocol, it's
+just as important to keep it simple to make the implementations more
+secure.
 
 % footer.txt
